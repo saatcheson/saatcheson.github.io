@@ -2,7 +2,7 @@ export default function About() {
     return (
         <>
             <p className="mb-5">
-                Hi! My name is Alex (my first name is actually Samuel, but I've always gone by Alex&mdash;it's a funny story). 
+                Hi! My name is Alex (my first name is actually Samuel, but I have always gone by Alex&mdash;it&apos;s a funny story). 
                 I am a PhD candidate in Computer Science at the University of Illinois Urbana-Champaign, where I am a member of the Social Spaces 
                 research advised by Dr. Karrie Karahalios. Prior to my time at Illinois, I earned a BS in Computer Science and Computer Engineering 
                 from the University of Southern California. While there, I was fortunate to have been mentored by Dr. Heather 

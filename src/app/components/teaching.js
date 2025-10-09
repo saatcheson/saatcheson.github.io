@@ -7,7 +7,6 @@ export default function Teaching() {
     
     function formatSemesters(course) {
         if (!course || !Array.isArray(course.semesters)) return null;
-
         return course.semesters.map((semester, index) => {
             const hasAward = Array.isArray(course.awards) && course.awards.includes(semester);
             const separator = index < course.semesters.length - 1 ? ', ' : '';

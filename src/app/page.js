@@ -9,7 +9,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Teaching from "./components/teaching";
 
 export default function Home() {
-  const [page, setPage] = useState("publications");
+  const [page, setPage] = useState("about");
 
   const load = (key) => {
     setPage(key);
