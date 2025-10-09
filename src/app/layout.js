@@ -1,3 +1,8 @@
+import "/lib/fontawesome"; // make sure the path is correct
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false; // prevent duplicate CSS injection
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,6 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <title>Alex Atcheson</title>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
