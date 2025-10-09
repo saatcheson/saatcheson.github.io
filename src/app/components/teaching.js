@@ -34,7 +34,7 @@ export default function Teaching() {
                 {courses.map((course, index) => (
                     <li key={index} className="mb-8 pl-4">
                         <span className="font-bold">{course.title}</span> (<span className="italic">{course.institution}</span>)
-                        <ul className="list-disc pl-10">
+                        <ul className="list-[circle] pl-10">
                             <li>
                                 {formatSemesters(course)}
                             </li>
@@ -46,9 +46,8 @@ export default function Teaching() {
                 <FontAwesomeIcon
                     icon={faAward}
                     size="lg"
-                    className="pr-2"
                 />
-                List of teachers ranked as excellent by students
+                = List of teachers ranked as excellent by students
             </details>
         </>
     );
