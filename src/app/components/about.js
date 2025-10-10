@@ -17,7 +17,7 @@ export default function About() {
             </p>
             <p>
                 I am also interested in problems related to information seeking, where another strand of my research 
-                examines how different people seek information online about the same topics. In the past, I have also investigated growth 
+                examines the factors affecting how different people seek information online. In the past, I have also investigated growth 
                 in online communities. Outside of research, you can catch me playing soccer, scrolling through funny cat 
                 posts on Reddit, or perfecting my apple sauce recipe.
             </p>
