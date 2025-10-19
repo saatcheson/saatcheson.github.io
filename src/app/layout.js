@@ -18,15 +18,17 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Alex Atcheson",
-  description: "Personal website of Alex Atcheson",
+  description: "Alex Atcheson's personal website",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        {/* Viewport for responsive scaling on mobile devices */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

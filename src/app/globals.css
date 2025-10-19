@@ -3,9 +3,6 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -32,7 +29,87 @@
 }
 
 body {
-  background: var(--foreground);
-  color: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout container */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Responsive helpers */
+.row {
+  display: flex;
+  gap: 24px;
+}
+
+.col-1-3 {
+  flex: 0 0 33.3333%;
+}
+
+.col-2-3 {
+  flex: 1 0 66.6667%;
+}
+
+/* Make images and videos scale to their container */
+img, picture, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Profile header: defaults to column (stacked), but on small screens show image and info in a row */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info { text-align: center; }
+
+.profile-image { width: 100%; max-width: 220px; height: auto; }
+
+/* Touch-target and typography defaults for mobile */
+button, a {
+  touch-action: manipulation;
+}
+
+/* Fluid type: scale down on smaller screens */
+h1 { font-size: xx-large; margin: 0 0; }
+h2 { font-size: clamp(1.25rem, 3.2vw, 1.75rem); margin: .5rem 0; }
+p, li { font-size: clamp(0.95rem, 2.6vw, 1.05rem); line-height: 1.5; }
+
+/* Buttons and nav items should be large enough on touch devices */
+button, .nav-link {
+  min-height: 44px;
+  font-size: x-large;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Responsive adjustments for small devices */
+@media (max-width: 640px) {
+  .row { flex-direction: column; gap: 12px; }
+  .col-1-3, .col-2-3 { flex: 1 0 100%; }
+  /* On small screens, show profile header as a row: image left, info right */
+  .profile-header { flex-direction: row; align-items: center; }
+  .profile-image { width: 96px; height: auto; }
+  .profile-info { text-align: left; padding-left: 12px; }
+  /* use a proper border shorthand (width style color) and add padding so
+    the border is visible and consistent with theme colors */
+  nav { border-left: 1px solid var(--foreground); padding-left: 12px; }
+  nav ul { display: flex; gap: 8px; flex-wrap: wrap; }
+  nav ul li { flex: 1 0 100%; }
+  aside { border: 0; }
+  main { padding: 0; }
 }
