@@ -15,7 +15,7 @@ export default function Publications() {
 
             const formatted = publication.equal.includes(author) ? (
                 <>
-                    {formattedBold}<sup className="text-xs">*</sup>
+                    {formattedBold}<sup className="text-md">*</sup>
                 </>
             ) : (
                 formattedBold
