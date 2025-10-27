@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container pt-10">
+    <div className="container p-10">
       <div className="row">
         <aside className="col-1-3 border-r pr-5">
             {/* profile header: image + name/contact (stacked on desktop, row on small screens) */}
@@ -51,7 +51,7 @@ export default function Home() {
                     <p>
                       <FontAwesomeIcon 
                         icon={faEnvelope}
-                        size="lg"
+                        size="md"
                         className="pr-2"
                       />
                       samuela7 [at] illinois [dot] edu
@@ -64,7 +64,7 @@ export default function Home() {
 
         {/* content */}
         <main className="col-2-3 pl-2">
-          <div className="mb-14">
+          <div className="mb-10">
             <nav>
               <ul className="text-3xl">
                 <li>
