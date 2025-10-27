@@ -37,7 +37,7 @@ export default function Home() {
             <div className="profile-header">
               <Image
                 className="profile-image"
-                src="/outdoor-headshot.jpg"
+                src="/profile_pic.jpg"
                 width={400}
                 height={400}
                 alt="Alex at Plitvice National Park in Croatia"
