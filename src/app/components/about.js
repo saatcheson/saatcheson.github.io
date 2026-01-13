@@ -3,7 +3,7 @@ export default function About() {
         <>
             <p className="mb-5">
                 Hi! My name is Alex (my first name is actually Samuel&mdash;it&apos;s a funny story). I am a PhD candidate 
-                in Computer Science at the University of Illinois at Urbana-Champaign, where I am a member of the Social Spaces 
+                in Computer Science at the University of Illinois Urbana-Champaign, where I am a member of the Social Spaces 
                 research group advised by Dr. Karrie Karahalios. Prior to that, I earned a BS in Computer Science 
                 and Computer Engineering from the University of Southern California. While there, I was fortunate to have been 
                 mentored by Dr. Heather Culbertson in the Haptics Robotics and Virtual Interaction lab.

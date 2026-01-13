@@ -47,7 +47,7 @@ export default function Teaching() {
                     icon={faAward}
                     size="lg"
                 />
-                = List of teachers ranked as excellent by students
+                = List of Teachers Ranked as Excellent by Their Students
             </details>
         </>
     );
