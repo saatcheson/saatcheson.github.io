@@ -15,8 +15,8 @@ export default function About() {
                 existing AI tools are used by students to address unmet access needs, and I design human-centric systems for supporting the development self-advocacy skills.
             </p>
             <p>
-                Beyond my dissertation work, I am also interested in problems related to online information seeking polarization&mdash;this other strand of my research 
-                examines the socio-demographic factors associated with different online searching behaviors. I have also done work around understanding the relationship between growth, moderation, and the development of online communities. 
+                Beyond my dissertation work, I am also interested in problems related to online information seeking and polarization&mdash;this strand of work  
+                investigates the socio-demographic factors associated with different online searching behaviors. I have also done work around understanding the relationship between growth, moderation, and how online communities develop over time. 
                 Outside of research, you can catch me playing soccer, scrolling through funny cat 
                 posts on Reddit, or perfecting my healthy brownie recipe (yes, it&apos;s a thing!).
             </p>
