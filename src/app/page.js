@@ -1,18 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import About from "./components/about";
 import Publications from "./components/publications";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Teaching from "./components/teaching";
 
 export default function Home() {
   const [page, setPage] = useState("about");
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const storedTheme = window.localStorage.getItem("theme");
+    if (storedTheme === "light" || storedTheme === "dark") {
+      setTheme(storedTheme);
+      document.documentElement.setAttribute("data-theme", storedTheme);
+      return;
+    }
+
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    setTheme(preferredTheme);
+    document.documentElement.setAttribute("data-theme", preferredTheme);
+  }, []);
 
   const load = (key) => {
     setPage(key);
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    window.localStorage.setItem("theme", nextTheme);
   };
 
   const renderPage = () => {
@@ -65,12 +88,24 @@ export default function Home() {
         {/* content */}
         <main className="col-2-3 pl-2">
           <div className="mb-10">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle mb-4 hover:cursor-pointer"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            >
+              <FontAwesomeIcon
+                icon={theme === "dark" ? faSun : faMoon}
+                size="sm"
+                className="pr-2"
+              />
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
+            </button>
             <nav>
               <ul className="text-3xl">
                 <li>
                   <button
                     onClick={() => load("about")}
-                    className={`nav-link w-full text-left py-1 ${page === "about" ? "bg-black text-white" : "hover:bg-black hover:text-white"} hover:cursor-pointer`}
+                    className="nav-link w-full text-left py-1 hover:cursor-pointer"
                     aria-pressed={page === "about"}
                   >
                     About
@@ -79,7 +114,7 @@ export default function Home() {
                 <li>
                   <button
                     onClick={() => load("publications")}
-                    className={`nav-link w-full text-left py-1 ${page === "publications" ? "bg-black text-white" : "hover:bg-black hover:text-white"} hover:cursor-pointer`}
+                    className="nav-link w-full text-left py-1 hover:cursor-pointer"
                     aria-pressed={page === "publications"}
                   >
                     Publications
@@ -88,7 +123,7 @@ export default function Home() {
                 <li>
                   <button
                     onClick={() => load("teaching")}
-                    className={`nav-link w-full text-left py-1 ${page === "teaching" ? "bg-black text-white" : "hover:bg-black hover:text-white"} hover:cursor-pointer`}
+                    className="nav-link w-full text-left py-1 hover:cursor-pointer"
                     aria-pressed={page === "teaching"}
                   >
                     Teaching
@@ -97,7 +132,7 @@ export default function Home() {
                 <li>
                   <a
                     href="/Curriculum_Vitae.pdf"
-                    className="nav-link block w-full text-left py-1 hover:bg-black hover:text-white hover:cursor-pointer"
+                    className="nav-link block w-full text-left py-1 hover:cursor-pointer"
                   >
                     Curriculum Vitae
                   </a>

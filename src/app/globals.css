@@ -11,6 +11,9 @@
   --nav-bg: #000000;
   --nav-fg: #ffffff;
   --nav-hover-bg: #000000;
+  --theme-toggle-border: #171717;
+  --theme-toggle-bg: transparent;
+  --theme-toggle-fg: #171717;
 }
 
 .sr-only {
@@ -25,14 +28,39 @@
   border: 0;
 }
 
+:root[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --nav-bg: #000000;
+  --nav-fg: #ffffff;
+  --nav-hover-bg: #000000;
+  --theme-toggle-border: #171717;
+  --theme-toggle-bg: transparent;
+  --theme-toggle-fg: #171717;
+}
+
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  /* invert nav colors in dark mode: white bg, black text */
+  --nav-bg: #ffffff;
+  --nav-fg: #000000;
+  --nav-hover-bg: #ffffff;
+  --theme-toggle-border: #ededed;
+  --theme-toggle-bg: transparent;
+  --theme-toggle-fg: #ededed;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --background: #0a0a0a;
     --foreground: #ededed;
-    /* invert nav colors in dark mode: white bg, black text */
     --nav-bg: #ffffff;
     --nav-fg: #000000;
     --nav-hover-bg: #ffffff;
+    --theme-toggle-border: #ededed;
+    --theme-toggle-bg: transparent;
+    --theme-toggle-fg: #ededed;
   }
 }
 
@@ -123,6 +151,20 @@ button, .nav-link {
 
 /* Active/pressed state uses the nav background and foreground */
 .nav-link[aria-pressed="true"] {
+  background: var(--nav-bg);
+  color: var(--nav-fg);
+}
+
+.theme-toggle {
+  border: 1px solid var(--theme-toggle-border);
+  background: var(--theme-toggle-bg);
+  color: var(--theme-toggle-fg);
+  padding: 0.4rem 0.75rem;
+  font-size: 1rem;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.theme-toggle:hover {
   background: var(--nav-bg);
   color: var(--nav-fg);
 }
