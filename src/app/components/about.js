@@ -9,7 +9,7 @@ export default function About() {
                 mentored by Dr. Heather Culbertson as an undergraduate researcher in the Haptics Robotics and Virtual Interaction lab.
             </p>
             <p className="mb-5">
-                Broadly, my research interests are in the area of Human-Computer Interaction, with focuses on 
+                Broadly, my research interests are at the intersection of Human-Computer Interaction and AI/ML, with specific focuses on 
                 Human-AI Interaction, Accessibility, and Education Technology. In my current research, I study the implications 
                 of technology, and in particular AI, for the participation of disabled persons in Higher Education and for designing more inclusive learning spaces. 
             </p>
